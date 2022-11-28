@@ -6,7 +6,7 @@ import React from 'react'
 function App() {
   return (
     <div className="App">
-      <header className="App-header px-4">
+      <header className="App-header px-4 lg:px-0">
         <QuoteCard />
       </header>
     </div>
