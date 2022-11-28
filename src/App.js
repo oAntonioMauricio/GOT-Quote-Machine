@@ -50,11 +50,10 @@ class QuoteCard extends React.Component {
 
   // Let's Randomize The Quote on Start
   componentWillMount() {
-    this.numberOfQuotes = this.state.quote.length;
-    this.randomQuote = (max) => {
+    this.randomQuote = (max = this.state.quote.length) => {
       return Math.floor(Math.random() * max)
     }
-    this.setState({ index: this.randomQuote(this.numberOfQuotes) });
+    this.setState({ index: this.randomQuote() });
   }
 
   // Let's Randomize The Quote onClick
@@ -62,7 +61,7 @@ class QuoteCard extends React.Component {
     this.randomQuote = (max = this.state.quote.length) => {
       return Math.floor(Math.random() * max)
     }
-
+    
     let notEqual = (number = this.randomQuote()) => {
       while (number === this.state.index) {
         number = this.randomQuote()
