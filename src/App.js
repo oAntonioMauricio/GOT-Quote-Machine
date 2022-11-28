@@ -80,7 +80,7 @@ class QuoteCard extends React.Component {
           <p id="author" className={authorStyle}>{this.state.quote[this.state.index].author}</p>
         </div>
         <div className={quoteSeparator}>
-          <button id="new-quote" className={buttonStyle} onClick={this.handleSubmit.bind(this)}>Get a New Quote</button>
+          <button id="new-quote" className={buttonStyle} onClick={this.handleSubmit.bind(this)}>Get a New Quote!</button>
           <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + " ' " + this.state.quote[this.state.index].quote + " ' " + " " + this.state.quote[this.state.index].author} target="_blank" rel="noreferrer" id="tweet-quote" className={buttonStyleTwitter}><button>Tweet This 🐦</button></a>
         </div>
       </div>
