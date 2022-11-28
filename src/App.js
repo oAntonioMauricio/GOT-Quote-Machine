@@ -20,23 +20,23 @@ class QuoteCard extends React.Component {
       index: 0,
       quote: [
         {
-          quote: "Never forget what you are. The rest of the world will not. Wear it like armor, and it can never be used to hurt you.",
+          quote: "\"Never forget what you are. The rest of the world will not. Wear it like armor, and it can never be used to hurt you.\"",
           author: "Tyrion Lannister",
         },
         {
-          quote: "Any man who must say, 'I am the king,' is no true king. I'll make sure you understand that when I've won your war for you.",
+          quote: "\"Any man who must say, 'I am the king,' is no true king. I'll make sure you understand that when I've won your war for you.\"",
           author: "Tywin Lannister",
         },
         {
-          quote: "The things I do for love.",
+          quote: "\"The things I do for love.\"",
           author: "Jaime Lannister",
         },
         {
-          quote: "You know nothing, Jon Snow.",
+          quote: "\"You know nothing, Jon Snow.\"",
           author: "Ygritte",
         },
         {
-          quote: "When you play the game of thrones, you win or you die. There is no middle ground.",
+          quote: "\"When you play the game of thrones, you win or you die. There is no middle ground.\"",
           author: "Cersei",
         },
       ],
@@ -73,15 +73,18 @@ class QuoteCard extends React.Component {
     const quoteStyle = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white";
     const authorStyle = "mb-3 font-normal text-gray-700 dark:text-gray-400";
 
+    //Twitter Link
+    const twiterLink = "https://twitter.com/intent/tweet?hashtags=quotes&text=" + this.state.quote[this.state.index].quote + " " + this.state.quote[this.state.index].author
+
     return (
       <div id="quote-box" className={quoteCard}>
         <div>
-          <p id="text" className={quoteStyle}>"{this.state.quote[this.state.index].quote}"</p>
+          <p id="text" className={quoteStyle}>{this.state.quote[this.state.index].quote}</p>
           <p id="author" className={authorStyle}>{this.state.quote[this.state.index].author}</p>
         </div>
         <div className={quoteSeparator}>
           <button id="new-quote" className={buttonStyle} onClick={this.handleSubmit.bind(this)}>Get a New Quote!</button>
-          <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + " ' " + this.state.quote[this.state.index].quote + " ' " + " " + this.state.quote[this.state.index].author} target="_blank" rel="noreferrer" id="tweet-quote" className={buttonStyleTwitter}><button>Tweet This 🐦</button></a>
+          <a href={twiterLink} target="_blank" rel="noreferrer" id="tweet-quote" className={buttonStyleTwitter}><button>Tweet This 🐦</button></a>
         </div>
       </div>
     )
