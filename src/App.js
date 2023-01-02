@@ -76,10 +76,10 @@ class QuoteCard extends React.Component {
   render() {
 
     // CSS Tailwind
-    const quoteCard = "max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700";
-    const quoteSeparator = "flex flex-row justify-between mt-10";
+    const quoteCard = "w-90 p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700";
+    const quoteSeparator = "justify-between mt-10";
 
-    const buttonStyle = "px-3 py-2 text-sm font-normal text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800";
+    const buttonStyle = "px-3 py-2 ml-4 mr-4 text-sm font-normal text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800";
     const buttonStyleTwitter = "px-3 py-2 text-sm font-normal text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800";
     const quoteStyle = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white";
     const authorStyle = "mb-3 font-normal text-gray-700 dark:text-gray-400";
