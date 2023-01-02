@@ -61,7 +61,7 @@ class QuoteCard extends React.Component {
     this.randomQuote = (max = this.state.quote.length) => {
       return Math.floor(Math.random() * max)
     }
-    
+
     let notEqual = (number = this.randomQuote()) => {
       while (number === this.state.index) {
         number = this.randomQuote()
@@ -76,8 +76,8 @@ class QuoteCard extends React.Component {
   render() {
 
     // CSS Tailwind
-    const quoteCard = "w-full sm:w-auto sm:w-90 h-96 sm:h-auto p-6 flex flex-col justify-between bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700";
-    const quoteSeparator = "justify-items-start justify-between mt-10";
+    const quoteCard = "w-full sm:w-auto sm:w-90 h-80 sm:h-auto p-6 flex flex-col justify-center bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700";
+    const quoteSeparator = "flex justify-items-start justify-between mt-10";
 
     const buttonStyle = "px-3 py-2 ml-4 mr-4 text-sm font-normal text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800";
     const buttonStyleTwitter = "px-3 py-2 text-sm font-normal text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800";
@@ -88,17 +88,21 @@ class QuoteCard extends React.Component {
     const twiterLink = "https://twitter.com/intent/tweet?hashtags=quotes&text=" + this.state.quote[this.state.index].quote + " " + this.state.quote[this.state.index].author
 
     return (
-      <div id="quote-box" className={quoteCard}>
-        <div className='flex flex-col items-center'>
-          <p id="text" className={quoteStyle}>{this.state.quote[this.state.index].quote}</p>
-          <p id="author" className={authorStyle}>{this.state.quote[this.state.index].author}</p>
-          <img alt="quote author" className='h-12 w-12 rounded-full ring-2 ring-white' src={this.state.quote[this.state.index].img}></img>
+      <>
+        <div id="quote-box" className={quoteCard}>
+          <div className='flex flex-col items-center justify-end'>
+            <p id="text" className={quoteStyle}>{this.state.quote[this.state.index].quote}</p>
+            <p id="author" className={authorStyle}>{this.state.quote[this.state.index].author}</p>
+            <img alt="quote author" className='h-12 w-12 rounded-full ring-2 ring-white' src={this.state.quote[this.state.index].img}></img>
+          </div>
         </div>
+
         <div className={quoteSeparator}>
           <button id="new-quote" className={buttonStyle} onClick={this.handleSubmit.bind(this)}>Get a New Quote!</button>
           <a href={twiterLink} target="_blank" rel="noreferrer" id="tweet-quote" className={buttonStyleTwitter}><button>Tweet This 🐦</button></a>
         </div>
-      </div>
+
+      </>
     )
   }
 }
